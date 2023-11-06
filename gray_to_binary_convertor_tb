@@ -1,0 +1,30 @@
+
+///100 Days of RTL ///
+
+///Abilash P///
+
+///gray to Binary code convertor///
+
+module gray_to_bin_conv_tb ();
+
+reg   [3:0] G;
+wire  [3:0] B;
+
+gray_to_bin_conv DUT (.G(G), .B(B));
+
+integer i;
+
+initial
+begin
+  for(i=0; i<16; i=i+1)
+  begin
+    G = i;
+    $display ("The Gray code is = %b", G);
+    #20;
+  end
+end
+
+initial
+  $monitor ("The Equivalent Binary code is = %b", B);
+
+endmodule
